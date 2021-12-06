@@ -1,0 +1,15 @@
+  # Tên của pipeline
+- pipeline.id: beats
+
+  # Đường dẫn tệp cấu hình
+  path.config: "/source/logstash/conf.d/beats/*.conf"
+
+  # Số lượng worker thực hiện Filters+Outputs của pipeline
+  pipeline.workers: 1
+
+  # Số lượng sự kiện cần thu thập từ Inputs trước khi gửi tới Filter+Worker
+  pipeline.batch.size: 125
+
+  # Thời gian (mili giây) chờ để gửi sự kiện từ Inputs tới Filter+Worker
+  # Sự kiện sẽ được gửi khi hết thời gian chờ ngay cả khi "pipeline.batch.size" chưa đạt
+  pipeline.batch.delay: 50
